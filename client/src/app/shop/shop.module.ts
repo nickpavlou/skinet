@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { ShopComponent } from './shop.component';
 import { ProductItemComponent } from './product-item/product-item.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ShopRoutingModule } from './shop-routing.module';
 
 @NgModule({
-    declarations: [ShopComponent, ProductItemComponent],
-    imports: [CommonModule, SharedModule, FontAwesomeModule],
-    exports: [ShopComponent],
+    declarations: [ShopComponent, ProductItemComponent, ProductDetailsComponent],
+    imports: [CommonModule, SharedModule, ShopRoutingModule, FontAwesomeModule],
 })
 export class ShopModule {}
