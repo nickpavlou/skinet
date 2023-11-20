@@ -10,3 +10,11 @@
 @import './node_modules/bootstrap/scss/bootstrap';
 
 @import './../node_modules/ngx-toastr/toastr.css';
+
+label.xng-breadcrumb-trail {
+    color: orange;
+}
+
+@import 'node_modules/bootswatch/dist/united/_variables';
+@import 'node_modules/bootswatch/dist/united/bootstrap';
+@import 'node_modules/bootswatch/dist/united/_bootswatch';
