@@ -1,5 +1,3 @@
-using AutoMapper.Internal.Mappers;
-using System.Threading.Tasks;
 using Core.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +5,6 @@ using API.Dtos;
 using API.Errors;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims;
 using API.Extensions;
 using AutoMapper;
 
@@ -64,6 +61,11 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
+            if (CheckEmailExistsAsync(registerDto.Email).Result.Value)
+            {
+                return new BadRequestObjectResult(new ApiValidationErrorResponse{Errors = new []{"Email address is in use."} });
+            }
+
             var user = new AppUser
             {
                 DisplayName = registerDto.DisplayName,
