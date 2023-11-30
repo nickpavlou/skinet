@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { AccountService } from 'src/app/account/account.service';
 import { BasketService } from 'src/app/basket/basket.service';
 import { BasketItem } from 'src/app/shared/models/basket';
+import { faCartShopping, faClockRotateLeft, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-navbar',
@@ -10,8 +11,10 @@ import { BasketItem } from 'src/app/shared/models/basket';
 })
 export class NavbarComponent {
     faCartShopping = faCartShopping;
+    faClockRotateLeft = faClockRotateLeft;
+    faRightFromBracket = faRightFromBracket;
 
-    constructor(public basketService: BasketService) {}
+    constructor(public basketService: BasketService, public accountService: AccountService) {}
 
     getCount(items: BasketItem[]) {
         return items.reduce((sum, item) => sum + item.quantity, 0);
