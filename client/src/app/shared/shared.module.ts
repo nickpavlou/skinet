@@ -9,10 +9,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TextInputComponent } from './components/text-input/text-input.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { StepperComponent } from './components/stepper/stepper.component';
+import { CdkStepperModule } from '@angular/cdk/stepper';
 
 @NgModule({
-    declarations: [PagingHeaderComponent, PagerComponent, OrderTotalsComponent, TextInputComponent],
-    imports: [CommonModule, PaginationModule.forRoot(), CarouselModule.forRoot(), ReactiveFormsModule, BsDropdownModule.forRoot(), FontAwesomeModule],
-    exports: [PaginationModule, PagingHeaderComponent, PagerComponent, CarouselModule, OrderTotalsComponent, ReactiveFormsModule, BsDropdownModule, TextInputComponent],
+    declarations: [PagingHeaderComponent, PagerComponent, OrderTotalsComponent, TextInputComponent, StepperComponent],
+    imports: [CommonModule, PaginationModule.forRoot(), CarouselModule.forRoot(), ReactiveFormsModule, BsDropdownModule.forRoot(), FontAwesomeModule, CdkStepperModule],
+    exports: [PaginationModule, PagingHeaderComponent, PagerComponent, CarouselModule, OrderTotalsComponent, ReactiveFormsModule, BsDropdownModule, TextInputComponent, StepperComponent, CdkStepperModule],
 })
 export class SharedModule {}
